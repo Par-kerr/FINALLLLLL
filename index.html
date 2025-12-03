@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parker’s Web Showcase</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<header>
+    <h1>Hey Y’all!!! 🎉</h1>
+    <p class="subtitle">Welcome to my interactive showcase</p>
+</header>
+
+<!-- -------------------- SECTION: FAVORITE FOODS -------------------- -->
+<section class="card">
+    <h2>What are some of y’all’s favorite foods?</h2>
+    <h3>Here are some of mine:</h3>
+
+    <p id="foods-list"></p>
+    <img src="untitled folder/assets/nugget-dino1.png" alt="Dino Nugget" class="img-md">
+
+    <h3>Guess my top favorite food:</h3>
+    <p id="top-food"></p>
+    <img src="untitled folder/assets/sushi.webp" class="img-md" alt="Sushi">
+</section>
+
+<!-- -------------------- SECTION: FAVORITE ACTOR -------------------- -->
+<section class="card">
+    <h2>Can you guess my favorite actor?</h2>
+    <h3>Hint: He plays in Scream and Good Girls</h3>
+
+    <p id="actor-name"></p>
+    <img src="untitled folder/assets/matthew.jpg" alt="Matthew Lillard" class="img-md">
+</section>
+
+<!-- -------------------- SECTION: AGE CALCULATION -------------------- -->
+<section class="card">
+    <h2>Last question!</h2>
+    <p>Me and my brother are 9 years apart. He was born in 1992. How old are we?</p>
+
+    <p id="ages" class="result"></p>
+
+    <script>
+        // Current year
+        const currentYear = new Date().getFullYear();
+
+        // Brother's birth year
+        const brotherBirthYear = 1992;
+
+        // Age calculations
+        const brotherAge = currentYear - brotherBirthYear;
+        const myAge = brotherAge - 9;
+
+        // Display ages
+        document.getElementById("ages").textContent = `My brother is ${brotherAge}. And I am ${myAge}.`;
+    </script>
+</section>
+
+
+
+<!-- -------------------- SECTION: INTRO / CONCAT -------------------- -->
+<section class="card">
+    <p id="intro-text" class="large-text"></p>
+    <p id="day-of-week" class="subtitle"></p>
+
+    <script>
+        // Concatenated greeting text
+        let text1 = "Fancy seeing you here!";
+        let text2 = "Now that I got you here, enjoy!";
+        document.getElementById("intro-text").textContent = text1 + " " + text2;
+
+        // Display current day
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const today = new Date().getDay();
+        document.getElementById("day-of-week").textContent = "Today is " + days[today];
+    </script>
+</section>
+
+
+<!-- -------------------- SECTION: JOKE + TIME GREETING -------------------- -->
+<section class="card">
+    <h2>Here’s a joke for y’all!</h2>
+    <h3>Why don’t ants get sick?</h3>
+    <h3 class="punchline">They have anty-bodies!!</h3>
+
+    <p id="greeting"></p>
+</section>
+
+       
+
+         <!-- -------------------- SECTION: LETTER COUNT -------------------- -->
+        <section class="card">
+            <h2>How many letters are in this paragraph?</h2>
+        
+            <p class="quote">
+                We hold these truths to be self-evident, that all men are created equal, that they
+                are endowed by their Creator with certain unalienable Rights, that among these are
+                Life, Liberty and the pursuit of Happiness. That to secure these rights, Governments
+                are instituted among Men, deriving their just powers from the consent of the governed,
+                --That whenever any Form of Government becomes destructive of these ends, it is the
+                Right of the People to alter or to abolish it, and to institute new Government, laying
+                its foundation on such principles and organizing its powers in such form, as to them
+                shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will
+                dictate that Governments long established should not be changed for light and
+                transient causes; and accordingly all experience hath shewn, that mankind are more
+                disposed to suffer, while evils are sufferable, than to right themselves by abolishing
+                the forms to which they are accustomed. But when a long train of abuses and usurpations,
+                pursuing invariably the same Object evinces a design to reduce them under absolute
+                Despotism, it is their right, it is their duty, to throw off such Government, and to
+                provide new Guards for their future security.--Such has been the patient sufferance of
+                these Colonies; and such is now the necessity which constrains them to alter their
+                former Systems of Government. The history of the present King of Great Britain is a
+                history of repeated injuries and usurpations, all having in direct object the
+                establishment of an absolute Tyranny over these States. To prove this, let Facts be
+                submitted to a candid world.
+            </p>
+        
+            <p id="letter-count" class="result"></p>
+        
+            <script>
+                // Get paragraph text
+                const paragraphText = document.querySelector('.quote').textContent;
+        
+                // Count letters (ignore spaces and punctuation if desired)
+                const letterCount = paragraphText.replace(/[^a-zA-Z]/g, '').length;
+        
+                // Display the count
+                document.getElementById('letter-count').textContent = `Letter count: ${letterCount}`;
+            </script>
+        </section>
+        
+    
+
+<!-- -------------------- SECTION: MATH -------------------- -->
+<section class="card">
+    <h2>Let’s do some math!</h2>
+    <p>What is 4,754 + 2,899?</p>
+    <p id="math-answer" class="result"></p>
+
+    <script>
+        // Define the numbers
+        const num1 = 4754;
+        const num2 = 2899;
+
+        // Calculate the sum
+        const sum = num1 + num2;
+
+        // Display the answer
+        document.getElementById('math-answer').textContent = `Answer: ${sum}`;
+    </script>
+</section>
+
+<!-- -------------------- SECTION: VACATION PIC -------------------- -->
+<section class="card">
+    <h2>A picture from my Alaska vacation</h2>
+    <img src="untitled folder/assets/alaska.jpeg" alt="Alaska" class="img-lg">
+</section>
+
+<!-- -------------------- SECTION: LOOPS (FOOD LISTS) -------------------- -->
+<section class="card">
+    <h2>Here are some foods I like</h2>
+    <p id="loop-list-1"></p>
+
+    <h3>Here’s a pizza I devoured. Zero regrets 🍕</h3>
+    <img src="untitled folder/assets/pizza.jpeg" alt="Pizza" class="img-md">
+
+    <h2>Let’s add more foods:</h2>
+    <p id="loop-list-2"></p>
+
+    <h3>A pasta dish I ate in Paris, France 🇫🇷</h3>
+    <img src="untitled folder/assets/pasta.jpeg" alt="Pasta" class="img-md">
+</section>
+
+<!-- -------------------- SECTION: ROCK PAPER SCISSORS GAME -------------------- -->
+<section class="card">
+    <section class="game">
+        <div class="score">
+            <div class="player-score">
+                <h2>Player</h2>
+                <p>0</p>
+            </div>
+            <div class="computer-score">
+                <h2>Computer</h2>
+                <p>0</p>
+            </div>
+        </div>
+
+        <div class="intro">
+            <h1>Rock, Paper and Scissors</h1>
+            <button>Lets Play!</button>
+        </div>
+
+        <div class="match fadeOut">
+            <h2 class="winner">Choose an Option</h2>
+            <div class="hands">
+                <img class="player-hand" src="untitled folder/assets/rock.png" alt="">
+                <img class="computer-hand" src="untitled folder/assets/rock.png" alt="">
+            </div>
+
+            <div class="options">
+                <button class="rock">rock</button>
+                <button class="paper">paper</button>
+                <button class="scissors">scissors</button>
+            </div>
+        </div>
+    </section>
+</section>
+
+<script src="app.js"></script>

@@ -1,0 +1,177 @@
+/* -------------------------------------------------
+   GLOBAL RESET & BASIC STYLE
+---------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #5fb8d3; /* nice cool color */
+    color: #333;
+}
+
+/* -------------------------------------------------
+   HEADER
+---------------------------------------------------*/
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #4a90e2, #7ed957);
+    color: white;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* -------------------------------------------------
+   CARD SECTIONS
+---------------------------------------------------*/
+.card {
+    background: white;
+    margin: 30px auto;
+    padding: 25px;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    color: #4a90e2;
+}
+
+.img-md {
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 15px auto;
+}
+
+.img-lg {
+    width: 400px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 12px;
+}
+
+.large-text {
+    font-size: 1.3rem;
+}
+
+.punchline {
+    color: #7ed957;
+    font-weight: bold;
+}
+
+.quote {
+    background: #f1f5f9;
+    padding: 15px;
+    border-left: 5px solid #4a90e2;
+    border-radius: 6px;
+}
+
+/* -------------------------------------------------
+   TEXT COLOR FROM ORIGINAL CSS
+---------------------------------------------------*/
+.lists {
+    color: rgb(34, 9, 123);
+}
+
+/* -------------------------------------------------
+   ROCK-PAPER-SCISSORS GAME
+---------------------------------------------------*/
+.rps {
+    text-align: center;
+}
+
+.score {
+    color: rgb(228, 7, 7);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.score h3 {
+    font-size: 26px;
+}
+
+.score p {
+    padding: 10px;
+    font-size: 24px;
+}
+
+.intro-screen button,
+.options button {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    background: rgb(45, 117, 96);
+    color: white;
+    transition: 0.25s;
+}
+
+.intro-screen button:hover,
+.options button:hover {
+    background: rgb(34, 90, 75);
+}
+
+.match.hidden {
+    display: none;
+}
+
+#winner-text {
+    font-size: 40px;
+    color: rgb(235, 9, 212);
+    margin-bottom: 20px;
+}
+
+.hands, .options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.player-hand {
+    transform: rotateY(180deg);
+}
+
+/* Shaking Animations */
+@keyframes shakePlayer {
+    0%, 25%, 50%, 75%, 100% { transform: rotateY(180deg) translateY(0); }
+    15%, 35%, 65%, 85% { transform: rotateY(180deg) translateY(-50px); }
+}
+
+@keyframes shakeComputer {
+    0%, 25%, 50%, 75%, 100% { transform: translateY(0); }
+    15%, 35%, 65%, 85% { transform: translateY(-50px); }
+}
+
+/* -------------------------------------------------
+   MEDIA / RESPONSIVE
+---------------------------------------------------*/
+@media (max-width: 768px) {
+    .img-md, .img-lg {
+        width: 90%;
+    }
+
+    .score {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hands, .options {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
